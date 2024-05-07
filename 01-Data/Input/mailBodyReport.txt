@@ -1,0 +1,9 @@
+﻿<p>Prezados,</p>
+
+<p>A execução da automação <b>{0}</b> foi encerrada com o status <b>{1}</b>.</p>
+
+{2}
+
+{3}
+
+<p>Atenciosamente.</p>

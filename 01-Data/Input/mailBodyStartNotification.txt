@@ -1,0 +1,5 @@
+﻿<p>Prezados,</p>
+
+<p>A execução da automação <b>{0}</b> foi iniciada!</p>
+
+<p>Atenciosamente.</p>

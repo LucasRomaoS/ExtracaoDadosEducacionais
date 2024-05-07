@@ -1,0 +1,22 @@
+﻿{
+    "configurationInfos":{
+        "processQueueName":"ExtracaoDadosEducacionais",
+        "processQueueFolder":"Shared",
+        "maxRetryNumberInitApplications":3,
+        "maxRetryNumberProcess":2,
+        "maxConsecutiveApplicationExceptions":3,
+        "useStorageBucketFiles":false,
+        "localBucketDir":"",
+        "exScreenshotsFolderPath":"",
+        "businessProcessName":"Extração de Dados Educacionais",
+        "assets":{
+			"urlDadosAbertos":{
+                "name":"urlDadosAbertos",
+                "orchestratorFolder":"Shared"
+            }
+        },
+        "credentials":{
+           
+        }
+    }
+}

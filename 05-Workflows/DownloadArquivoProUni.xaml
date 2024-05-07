@@ -1,0 +1,192 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadArquivoProUni" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_fileDownloaded" Type="OutArgument(si:FileInfo)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1514,1362</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>DownloadArquivo_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DownloadArquivoProUni" sap:VirtualizedContainerService.HintSize="608,1297" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 2020 - Bolsas concedidas e perfil dos beneficiários do Prouni - Dados Abertos - " sap:VirtualizedContainerService.HintSize="546,1209" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="e99f96ac-61a9-46ab-acc1-0b51b8fbfe87" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="512,969" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="arquivoExiste" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[out_fileDownloaded]" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+              <ui:GetLastDownloadedFile.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="416,265" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'https://dadosabertos.me…'" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e99f96ac-61a9-46ab-acc1-0b51b8fbfe87" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://dadosabertos.mec.gov.br/prouni/item/124-bolsas-e-perfil-2020" CvTextArgument="https://dadosabertos.mec.gov.br/images/conteudo/prouni/2020/ProuniRelatorioDadosAbertos2020.csv" CvType="Text" DesignTimeRectangle="690, 642, 675, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'https://dadosabertos.me…'" FullSelectorArgument="&lt;webctrl aaname='https://dadosabertos.mec.gov.br/images/conteudo/prouni/2020/Prou*' parentid='content-section' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='https://dadosabertos.mec.gov.br/images/conteudo/prouni/2020/Prou*' parentid='content-section' tag='A' type='' class='' check:innerText='https://dadosabertos.mec.gov.br/images/conteudo/prouni/2020/ProuniRelatorioDadosAbertos2020.csv' /&gt;" Guid="c468fcd4-62de-4204-b8ff-508d344d25a7" ImageBase64="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" InformativeScreenshot="83fd80e331e6792cdec4b45c786c52ca.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='2020 - Bolsas concedidas e perfil dos beneficiários do Prouni - Dados Abertos - MEC' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </ui:GetLastDownloadedFile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetLastDownloadedFile>
+            <ui:FileExistsX DisplayName="File Exists" Exists="[arquivoExiste]" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[out_fileDownloaded.FullName]" />
+            <ui:IfElseIfV2 Condition="[arquivoExiste]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="450,660" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+              <ui:IfElseIfV2.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[New System.Exception(&quot;Erro em baixar aquivo&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </ui:IfElseIfV2.Else>
+              <ui:IfElseIfV2.ElseIfs>
+                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+              </ui:IfElseIfV2.ElseIfs>
+              <ui:IfElseIfV2.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Arquivo baixado com sucesso!&quot;]" />
+                </Sequence>
+              </ui:IfElseIfV2.Then>
+            </ui:IfElseIfV2>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANNSURBVDhPZZD/U9N1HMc//4oBapHJF/misjklgTO4BoKIKKHzCxIojC8jFY8QoskBekPw4AhPwsyQMOCg9umIsVNgOAg25EtfpDopDVon5402ePTeoO7Kz93jt8/j+Xp8PhL/e1wu1+zy8nKj2+2uXl1drVqnch29oEJQLrgkeH9twJ4HNi1M5MBvPfzx3EFx84fsLkhAVRiPMl9NRF4c23PfIvRsDMFZe9mauYd/B1Zdz1n5047r5zZctnOsfHcFHFZkq4nY4iNEaGNfkrdkqHA6nZckzeUm3qlo5OJH7bSbRvjrdytOexnuh+msPmn31ugaSwnJjmZbdhQBmZFe+fWTu1haWiqX1BeuEvteDVEFlahyKii50YHzqYUly7u4h5NhuhQWBzE+7EeVp2bLqV1e2f+4EofDUSHt01URlb8mh2eWEnC8mBu9JhZt13lhVrPyIA4G97H8401+mv+F0zUFvHZMgb9GwcLCgl6K1OpRnv2AsHX51bQi0svr+XVWZlGOxjkQw4v+aBxyFM/u5zI/1Ulrz2eEn45hfn6+UtqZVUZIRglvaC6wOU3HpkNaQo8VMfe9jbl7e3ja+ybPBE+6Ipnr2M0P7SpmzTUMW0eYmZnplgJPXMQ//RybjxSyMSUXvwPZBKdpeWSzMNGq8AqPhTjbpuLRp0pst5SMy3oG7psZHR01Sp7kTan5bDyYg29SFj7xp0jML2Pkm1YGm3YwcUuB/RMl336swHo3HYvcwLWWBgJTlQwNDTVKnmS/A2fw3Z+Jj/okG+I0lBga6b9TSH99OMPNO7A072Sws5Qv5a9IKdKII0H47Q/GZrPVSn5J2fgkZPDK2yfYEHuUw7oy+jrr6L22l69rwxhoSWWgq5bqJgMBhxT4JgSJ0m2iOITp6WmDFHQ4l4CULNRnijlfVYfxcwNd9fF0V4cg3z7Pve4vSC44KuoCRWWwqBVySqggbG1gbGyMB2ZZXG2g92YOnVcj6axLpOfOZfT11Ww9GOFN9k0UcnKIuOyR15iamlobMF3fjmwIo/dKKD0tOto67pKkTROfFYCvR04Sskj+R/zPgN1ux2KxYDab6evrw2g0PpZl+bbJZGr2/OXx8fH6ycnJWs/LLzNl+BtcCqYIEnvwSgAAAABJRU5ErkJggg==" InformativeScreenshot="717bbc8979e24f7c12056f666350051b.jpg" Selector="&lt;html app='chrome.exe' title='2020 - Bolsas concedidas e perfil dos beneficiários do Prouni - Dados Abertos - MEC' /&gt;" Title="2020 - Bolsas concedidas e perfil dos beneficiários do Prouni - Dados Abertos - MEC" Url="https://dadosabertos.mec.gov.br/prouni/item/124-bolsas-e-perfil-2020" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
