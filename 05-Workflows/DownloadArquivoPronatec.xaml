@@ -1,0 +1,199 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadArquivoPronatec" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_pronatecFileDownloaded" Type="OutArgument(si:FileInfo)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1514,1362</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>DownloadArquivoPronatec_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DownloadArquivoPronatec" sap:VirtualizedContainerService.HintSize="608,1297" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Pronatec - Dados Abertos - MEC" sap:VirtualizedContainerService.HintSize="546,1209" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="9b043ae4-f778-4ccb-97e4-b3e823e470cc" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="512,969" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="arquivoExiste" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[out_pronatecFileDownloaded]" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+              <ui:GetLastDownloadedFile.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="416,265" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '2019 -'" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b043ae4-f778-4ccb-97e4-b3e823e470cc" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://dadosabertos.mec.gov.br/pronatec" CvTextArgument="2019 - Lista das obras da Rede Federal de EPCT" CvType="Text" DesignTimeRectangle="827, 998, 338, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'2019 -'" FullSelectorArgument="&lt;webctrl parentid='content-section' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='content-section' tag='A' type='' class='' aaname='2019 - Lista das obras da Rede Federal de EPCT' check:innerText='2019 - Lista das obras da Rede Federal de EPCT' /&gt;" Guid="4f113c21-c759-41c3-a4b3-0492ea144c13" ImageBase64="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" InformativeScreenshot="3baf919c2502cda122eaa27a94d28e0f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pronatec - Dados Abertos - MEC' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </ui:GetLastDownloadedFile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetLastDownloadedFile>
+            <ui:FileExistsX DisplayName="File Exists" Exists="[arquivoExiste]" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[out_pronatecFileDownloaded.FullName]" />
+            <ui:IfElseIfV2 Condition="[arquivoExiste]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="450,660" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+              <ui:IfElseIfV2.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[New System.Exception(&quot;Erro em baixar aquivo&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </ui:IfElseIfV2.Else>
+              <ui:IfElseIfV2.ElseIfs>
+                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+              </ui:IfElseIfV2.ElseIfs>
+              <ui:IfElseIfV2.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Arquivo baixado com sucesso!&quot;]" />
+                </Sequence>
+              </ui:IfElseIfV2.Then>
+            </ui:IfElseIfV2>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANNSURBVDhPZZD/U9N1HMc//4oBapHJF/misjklgTO4BoKIKKHzCxIojC8jFY8QoskBekPw4AhPwsyQMOCg9umIsVNgOAg25EtfpDopDVon5402ePTeoO7Kz93jt8/j+Xp8PhL/e1wu1+zy8nKj2+2uXl1drVqnch29oEJQLrgkeH9twJ4HNi1M5MBvPfzx3EFx84fsLkhAVRiPMl9NRF4c23PfIvRsDMFZe9mauYd/B1Zdz1n5047r5zZctnOsfHcFHFZkq4nY4iNEaGNfkrdkqHA6nZckzeUm3qlo5OJH7bSbRvjrdytOexnuh+msPmn31ugaSwnJjmZbdhQBmZFe+fWTu1haWiqX1BeuEvteDVEFlahyKii50YHzqYUly7u4h5NhuhQWBzE+7EeVp2bLqV1e2f+4EofDUSHt01URlb8mh2eWEnC8mBu9JhZt13lhVrPyIA4G97H8401+mv+F0zUFvHZMgb9GwcLCgl6K1OpRnv2AsHX51bQi0svr+XVWZlGOxjkQw4v+aBxyFM/u5zI/1Ulrz2eEn45hfn6+UtqZVUZIRglvaC6wOU3HpkNaQo8VMfe9jbl7e3ja+ybPBE+6Ipnr2M0P7SpmzTUMW0eYmZnplgJPXMQ//RybjxSyMSUXvwPZBKdpeWSzMNGq8AqPhTjbpuLRp0pst5SMy3oG7psZHR01Sp7kTan5bDyYg29SFj7xp0jML2Pkm1YGm3YwcUuB/RMl336swHo3HYvcwLWWBgJTlQwNDTVKnmS/A2fw3Z+Jj/okG+I0lBga6b9TSH99OMPNO7A072Sws5Qv5a9IKdKII0H47Q/GZrPVSn5J2fgkZPDK2yfYEHuUw7oy+jrr6L22l69rwxhoSWWgq5bqJgMBhxT4JgSJ0m2iOITp6WmDFHQ4l4CULNRnijlfVYfxcwNd9fF0V4cg3z7Pve4vSC44KuoCRWWwqBVySqggbG1gbGyMB2ZZXG2g92YOnVcj6axLpOfOZfT11Ww9GOFN9k0UcnKIuOyR15iamlobMF3fjmwIo/dKKD0tOto67pKkTROfFYCvR04Sskj+R/zPgN1ux2KxYDab6evrw2g0PpZl+bbJZGr2/OXx8fH6ycnJWs/LLzNl+BtcCqYIEnvwSgAAAABJRU5ErkJggg==" InformativeScreenshot="dc24c01247fc1fd1284e771a86226b0f.jpg" Selector="&lt;html app='chrome.exe' title='Pronatec - Dados Abertos - MEC' /&gt;" Title="Pronatec - Dados Abertos - MEC" Url="https://dadosabertos.mec.gov.br/pronatec" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

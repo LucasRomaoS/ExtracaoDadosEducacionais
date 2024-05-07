@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1514,999</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1514,1289</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -93,12 +93,14 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="416,934" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="416,1224" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="si:FileInfo" Name="fileDownloaded" />
+      <Variable x:TypeArguments="si:FileInfo" Name="proUniFileDownloaded" />
       <Variable x:TypeArguments="x:String" Name="caminhoArquivo" />
+      <Variable x:TypeArguments="si:FileInfo" Name="pronatecFileDownloaded" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -114,30 +116,37 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="05-Workflows\DownloadArquivoProUni.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="05-Workflows\DownloadArquivoProUni.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="si:FileInfo" x:Key="out_fileDownloaded">
-          <VisualBasicReference x:TypeArguments="si:FileInfo" ExpressionText="fileDownloaded" />
+        <OutArgument x:TypeArguments="si:FileInfo" x:Key="out_proUniFileDownloaded">
+          <VisualBasicReference x:TypeArguments="si:FileInfo" ExpressionText="proUniFileDownloaded" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="05-Workflows\NavegacaoPronatec.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="05-Workflows\NavegacaoPronatec.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="05-Workflows\DownloadArquivoPronatec.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="05-Workflows\DownloadArquivoPronatec.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="si:FileInfo" x:Key="out_pronatecFileDownloaded">
+          <VisualBasicReference x:TypeArguments="si:FileInfo" ExpressionText="pronatecFileDownloaded" />
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="05-Workflows\MoverArquivo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="05-Workflows\MoverArquivo.xaml">
       <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="si:FileInfo" x:Key="in_filePath">[proUniFileDownloaded]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_caminhoArquivo">[caminhoArquivo]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="05-Workflows\MoverArquivo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="05-Workflows\MoverArquivo.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="si:FileInfo" x:Key="in_filePath">
-          <VisualBasicValue x:TypeArguments="si:FileInfo" ExpressionText="fileDownloaded" />
+          <VisualBasicValue x:TypeArguments="si:FileInfo" ExpressionText="pronatecFileDownloaded" />
         </InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_caminhoArquivo">
           <VisualBasicReference x:TypeArguments="x:String" ExpressionText="caminhoArquivo" />
         </OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="05-Workflows\FiltrarDataTable.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="05-Workflows\FiltrarDataTable.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_caminhoArquivo">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="caminhoArquivo" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="argument1" />
-        <InArgument x:TypeArguments="x:String" x:Key="in_sheetName">
-          <Literal x:TypeArguments="x:String">ProuniRelatorioDadosAbertos2020</Literal>
-        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
